@@ -16,7 +16,7 @@ module.exports = {
         "!**/index.jsx",
         "!**/index.ts",
         "!**/index.tsx",
-        "!**/react-app-end.d.ts",
+        "!**/react-app-env.d.ts",
         "!**/setupTests.tsx",
         "!**/serviceWorker.tsx"
     ],

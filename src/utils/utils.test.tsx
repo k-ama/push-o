@@ -2,7 +2,7 @@ import { computeTarget, computeRBGTarget } from './utils'
 describe ('utils', () => {
   describe ('computeRGB', () => {
 
-    test('zero', () => {
+    test('returns 0 when target is 0', () => {
       const params = {
         min: 0,
         max: 0,
@@ -16,7 +16,7 @@ describe ('utils', () => {
   })
   describe ('computeRBGTarget', () => {
 
-    test('', () => {
+    test('returns the middle color when target is 50', () => {
       const params = {
         minColor: {
           r: 0,
