@@ -1,9 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Actions } from '../store/actions'
+import { Actions } from '../../store/actions'
 import './Counter.css';
-import Color from '../types/Color'
-import { computeRBGTarget } from '../utils/utils'
+import Color from '../../types/Color'
+import { computeRBGTarget } from '../../utils/utils'
 
 
 export const Counter = (props: {minColor: Color, maxColor: Color}) => {

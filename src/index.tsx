@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { createStore , compose } from 'redux'
 import reducer from './store/reducer'
 import './index.css'
-import App from './components/App'
+import App from './components/App/App'
 import * as serviceWorker from './serviceWorker'
 
 declare global {

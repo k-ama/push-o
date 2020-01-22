@@ -2,8 +2,8 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import App from './App';
 
-jest.mock("./Counter")
-jest.mock("./Toggle")
+jest.mock("../Counter/Counter")
+jest.mock("../Toggle/Toggle")
 
 describe('App', () => {
 

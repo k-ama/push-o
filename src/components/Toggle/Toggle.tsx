@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { Actions } from '../store/actions'
+import { Actions } from '../../store/actions'
 import './Toggle.css';
 
 export const Toggle = () => {

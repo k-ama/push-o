@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import Counter from './Counter';
-import Toggle from './Toggle'
+import Counter from '../Counter/Counter';
+import Toggle from '../Toggle/Toggle'
 
 const blue = {
   r:70,
