@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter Snapshot renders Counter 1`] = `
+<div
+  className="Counter"
+>
+  <div
+    className="Counter-button"
+    onClick={[Function]}
+    style={
+      Object {
+        "backgroundColor": "rgb(0,0,0)",
+      }
+    }
+  />
+</div>
+`;

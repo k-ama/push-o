@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import Counter from '../Counter/Counter';
 import Toggle from '../Toggle/Toggle'
+import { useDispatch, useSelector } from 'react-redux';
+import { Actions } from '../../store/actions';
 
 const blue = {
   r:70,
@@ -15,18 +17,26 @@ const pink = {
   b:31
 }
 
+
+
 function App() {
+
+  const dispatch = useDispatch()
+  const selector = (state: any) => {
+    return state.togglestate
+  }
+  const togglestate = useSelector(selector)
+  const handleToggleOnChange = (value: any) => {
+     dispatch(value.value? Actions.setOff(): Actions.setOn())
+  }
   return (
     <div className="App">
-      <div>
-        <Counter
-          minColor={blue}
-          maxColor={pink}
-        />
-      </div>
-      <div>
-         <Toggle/>
-      </div>
+      <Counter
+        togglestate={togglestate}
+        minColor={blue}
+        maxColor={pink}
+      />
+      <Toggle onChange={handleToggleOnChange}/>
     </div>
   );
 }

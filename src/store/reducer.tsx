@@ -2,12 +2,14 @@ import { Reducer } from 'redux'
 import { ActionsTypes } from './actions'
 
 export interface AppState {
-  readonly count: number
+  readonly count: number,
+  togglestate: boolean
 }
 
 // Type-safe initialState!
 const initialState: AppState = {
-  count: 0
+  count: 0,
+  togglestate: false
 }
 
 // Thanks to Redux 4's much simpler typings, we can take away a lot of typings on the reducer side,
@@ -19,6 +21,12 @@ const reducer: Reducer<AppState> = (state = initialState, action) => {
     }
     case ActionsTypes.TIMEOUT: {
       return { ...state, count: state.count - 10 }
+    }
+    case ActionsTypes.SET_ON: {
+      return { ...state, togglestate: true }
+    }
+    case ActionsTypes.SET_OFF: {
+      return { ...state, togglestate: false }
     }
     default: {
       return state

@@ -6,7 +6,7 @@ import Color from '../../types/Color'
 import { computeRBGTarget } from '../../utils/utils'
 
 
-export const Counter = (props: {minColor: Color, maxColor: Color}) => {
+export const Counter = (props: {togglestate: boolean, minColor: Color, maxColor: Color}) => {
   const dispatch = useDispatch()
   const selector = (state: any) => {
     return state.count
@@ -15,16 +15,21 @@ export const Counter = (props: {minColor: Color, maxColor: Color}) => {
 
 
   const countTimeout = setTimeout(() => {
+    if (!props.togglestate) {
+      return
+    }
     if (count > 0) {
       dispatch(Actions.timeout())
     }
   }, 1000)
   const onCountChange = () => {
+    if (!props.togglestate) {
+      return
+    }
     if (count < 100) {
       clearTimeout(countTimeout)
       dispatch(Actions.userPush())
     }
-
  }
 
   const {

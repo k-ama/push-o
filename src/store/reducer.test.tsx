@@ -7,7 +7,8 @@ describe ('reducer', () => {
     test('returns updated count', () => {
       const params = {
         state: {
-          count: 0
+          count: 0,
+          togglestate: true
         } ,
         action: {
           type: ActionsTypes.USER_PUSH
@@ -26,7 +27,8 @@ describe ('reducer', () => {
     test('returns updated count', () => {
       const params = {
         state: {
-          count: 0
+          count: 0,
+          togglestate: true
         } ,
         action: {
           type: ActionsTypes.TIMEOUT
@@ -45,7 +47,8 @@ describe ('reducer', () => {
     test('returns updated state', () => {
       const params = {
         state: {
-          count: 5
+          count: 5,
+          togglestate: true
         } ,
         action: {
           type: null
@@ -53,7 +56,8 @@ describe ('reducer', () => {
       }
       const result = reducer(params.state, params.action)
       const expected = {
-        count: params.state.count
+        count: params.state.count,
+        togglestate: params.state.togglestate
       }
       expect(result).toStrictEqual(expected)
     })
@@ -69,7 +73,8 @@ describe ('reducer', () => {
       }
       const result = reducer( undefined, params.action)
       const expected = {
-        count: 0
+        count: 0,
+        togglestate: true
       }
       expect(result).toStrictEqual(expected)
     })
