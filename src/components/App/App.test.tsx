@@ -1,5 +1,5 @@
 import React from 'react';
-import renderer from 'react-test-renderer';
+import { mockProvider } from '../../test-base'
 import App from './App';
 
 jest.mock("../Counter/Counter")
@@ -9,7 +9,8 @@ describe('App', () => {
 
   describe('Snapshot', () => {
     test('renders App with no props', () => {
-      const component = renderer.create(<App />)
+
+      const component = mockProvider(<App />, {})
       expect(component.toJSON()).toMatchSnapshot()
     })
   })

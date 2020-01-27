@@ -1,5 +1,6 @@
 import reducer from './reducer'
 import { ActionsTypes } from './actions'
+import { initialState } from './reducer'
 
 describe ('reducer', () => {
 
@@ -7,8 +8,8 @@ describe ('reducer', () => {
     test('returns updated count', () => {
       const params = {
         state: {
-          count: 0,
-          togglestate: true
+          ...initialState,
+          count: 0
         } ,
         action: {
           type: ActionsTypes.USER_PUSH
@@ -16,6 +17,7 @@ describe ('reducer', () => {
       }
       const result = reducer(params.state, params.action)
       const expected = {
+        ...initialState,
         count: params.state.count + 10
       }
       expect(result).toStrictEqual(expected)
@@ -27,8 +29,8 @@ describe ('reducer', () => {
     test('returns updated count', () => {
       const params = {
         state: {
-          count: 0,
-          togglestate: true
+          ...initialState,
+          count: 0
         } ,
         action: {
           type: ActionsTypes.TIMEOUT
@@ -36,6 +38,7 @@ describe ('reducer', () => {
       }
       const result = reducer(params.state, params.action)
       const expected = {
+        ...initialState,
         count: params.state.count - 10
       }
       expect(result).toStrictEqual(expected)
@@ -47,8 +50,8 @@ describe ('reducer', () => {
     test('returns updated state', () => {
       const params = {
         state: {
-          count: 5,
-          togglestate: true
+          ...initialState,
+          count: 5
         } ,
         action: {
           type: null
@@ -56,8 +59,8 @@ describe ('reducer', () => {
       }
       const result = reducer(params.state, params.action)
       const expected = {
-        count: params.state.count,
-        togglestate: params.state.togglestate
+        ...initialState,
+        count: params.state.count
       }
       expect(result).toStrictEqual(expected)
     })
@@ -73,8 +76,7 @@ describe ('reducer', () => {
       }
       const result = reducer( undefined, params.action)
       const expected = {
-        count: 0,
-        togglestate: true
+        ...initialState
       }
       expect(result).toStrictEqual(expected)
     })

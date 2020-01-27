@@ -4,18 +4,16 @@ import { Actions } from '../../store/actions'
 import './Counter.css';
 import Color from '../../types/Color'
 import { computeRBGTarget } from '../../utils/utils'
+import { toggleStateSelector, countSelector } from '../../store/selector'
 
 
-export const Counter = (props: {togglestate: boolean, minColor: Color, maxColor: Color}) => {
+export const Counter = (props: { minColor: Color, maxColor: Color}) => {
   const dispatch = useDispatch()
-  const selector = (state: any) => {
-    return state.count
-  }
-  const count = useSelector(selector)
-
+  const count = useSelector(countSelector)
+  const toggleState = useSelector(toggleStateSelector)
 
   const countTimeout = setTimeout(() => {
-    if (!props.togglestate) {
+    if (!toggleState) {
       return
     }
     if (count > 0) {
@@ -23,7 +21,7 @@ export const Counter = (props: {togglestate: boolean, minColor: Color, maxColor:
     }
   }, 1000)
   const onCountChange = () => {
-    if (!props.togglestate) {
+    if (!toggleState) {
       return
     }
     if (count < 100) {

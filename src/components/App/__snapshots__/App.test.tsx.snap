@@ -4,15 +4,11 @@ exports[`App Snapshot renders App with no props 1`] = `
 <div
   className="App"
 >
-  <div>
-    <div
-      className="Counter"
-    />
-  </div>
-  <div>
-    <div
-      className="Toggle"
-    />
-  </div>
+  <div
+    className="Counter"
+  />
+  <div
+    className="Toggle"
+  />
 </div>
 `;

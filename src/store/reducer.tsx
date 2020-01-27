@@ -7,10 +7,11 @@ export interface AppState {
 }
 
 // Type-safe initialState!
-const initialState: AppState = {
+export const initialState: AppState = {
   count: 0,
   togglestate: false
 }
+
 
 // Thanks to Redux 4's much simpler typings, we can take away a lot of typings on the reducer side,
 // everything will remain type-safe.

@@ -17,22 +17,15 @@ const pink = {
   b:31
 }
 
-
-
 function App() {
 
   const dispatch = useDispatch()
-  const selector = (state: any) => {
-    return state.togglestate
-  }
-  const togglestate = useSelector(selector)
   const handleToggleOnChange = (value: any) => {
      dispatch(value.value? Actions.setOff(): Actions.setOn())
   }
   return (
     <div className="App">
       <Counter
-        togglestate={togglestate}
         minColor={blue}
         maxColor={pink}
       />

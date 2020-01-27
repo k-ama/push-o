@@ -1,14 +1,11 @@
-import React from 'react';
-import renderer from 'react-test-renderer'
-import { Provider } from 'react-redux'
-import configureStore from 'redux-mock-store'
+import React from 'react'
+import { mockProvider } from '../../test-base'
 import Counter from './Counter'
 
 describe('Counter', () => {
 
   describe('Snapshot', () => {
     test('renders Counter', () => {
-      const mockStore = configureStore()
       const minColor = {
         r:0,
         g:0,
@@ -22,8 +19,7 @@ describe('Counter', () => {
       const initialState = {
         count:0
       }
-      let store = mockStore(initialState)
-      const component = renderer.create(<Provider store={store}><Counter minColor={minColor} maxColor={maxColor}/></Provider>)
+      const component = mockProvider( <Counter minColor={minColor} maxColor={maxColor}/> , initialState)
       expect(component.toJSON()).toMatchSnapshot()
     })
   })
